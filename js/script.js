@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
       welcomeText.textContent = `Hi ${userName}, Welcome To TechTrek`;
     }
 
+    // Auto-fill name in Message Us form
+    const messageFormName = document.getElementById("name");
+    if (messageFormName) {
+      messageFormName.value = userName;
+    }
+
     // Hide modal
     modal.style.display = "none";
   });
@@ -79,7 +85,45 @@ function updateCurrentTime() {
   const currentTimeElement = document.getElementById("currentTime");
   if (currentTimeElement) {
     const now = new Date();
-    currentTimeElement.textContent = now.toString();
+
+    // Format: Day, Month Date, Year, HH:MM:SS GMT+XXXX
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const dayName = days[now.getDay()];
+    const monthName = months[now.getMonth()];
+    const date = now.getDate();
+    const year = now.getFullYear();
+
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    // Get timezone offset
+    const offset = -now.getTimezoneOffset();
+    const offsetHours = String(Math.floor(Math.abs(offset) / 60)).padStart(
+      2,
+      "0",
+    );
+    const offsetMinutes = String(Math.abs(offset) % 60).padStart(2, "0");
+    const offsetSign = offset >= 0 ? "+" : "-";
+    const timezone = `GMT${offsetSign}${offsetHours}${offsetMinutes}`;
+
+    const timeString = `${dayName}, ${monthName} ${date}, ${year}, ${hours}:${minutes}:${seconds} ${timezone}`;
+    currentTimeElement.textContent = timeString;
   }
 }
 
@@ -105,14 +149,12 @@ function validateBirthdate(birthdate) {
   const selectedDate = new Date(birthdate);
   const today = new Date();
 
+  // Set time to start of day for accurate comparison
+  today.setHours(0, 0, 0, 0);
+  selectedDate.setHours(0, 0, 0, 0);
+
   if (selectedDate > today) {
     return "Birthdate cannot be in the future";
-  }
-
-  // Check if age is at least 10 years
-  const age = today.getFullYear() - selectedDate.getFullYear();
-  if (age < 10) {
-    return "You must be at least 10 years old";
   }
 
   return "";
@@ -139,10 +181,7 @@ function validateMessage(message) {
   if (message.trim() === "") {
     return "Message is required";
   }
-  if (message.trim().length < 10) {
-    return "Message must be at least 10 characters long";
-  }
-  return "";
+  if (message.trim().length < 10) return "";
 }
 
 // Display error message

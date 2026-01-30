@@ -3,20 +3,279 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio</title>
-
-    <!-- CSS External -->
+    <title>TechTrek - Company Profile</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <header></header>
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal">
+      <div class="modal-content">
+        <h2>Selamat Datang di TechTrek!</h2>
+        <p>Silakan masukkan nama Anda untuk melanjutkan</p>
+        <input
+          type="text"
+          id="userNameInput"
+          placeholder="Masukkan nama Anda..."
+        />
+        <button id="modalOkBtn" class="modal-btn">OK</button>
+      </div>
+    </div>
 
-    <main></main>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="img/logo.png" alt="TechTrek Logo" />
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#our-profile" class="nav-link">Our Profile</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#message-us" class="nav-link">Message Us</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <footer></footer>
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="container">
+        <div class="welcome-box">
+          <h1 id="welcome-text">Hi, Welcome To TechTrek</h1>
+          <p>Navigating the future of innovation and technology</p>
+        </div>
 
-    <!-- JavaScript External -->
+        <!-- Photo Banner -->
+        <div class="photo-banner">
+          <img src="img/banner.jpeg" alt="Company Banner" />
+          <div class="banner-overlay">
+            <p class="banner-code">13654578</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Profile Section -->
+    <section id="our-profile" class="section profile-section">
+      <div class="container">
+        <h2 class="section-title">Our Profile</h2>
+
+        <div class="profile-content">
+          <!-- About Company -->
+          <div class="profile-card">
+            <h3>About The Company</h3>
+            <p>
+              TechTrek adalah perusahaan teknologi yang berfokus pada
+              pengembangan sumber daya manusia di bidang digital. Kami
+              berkomitmen untuk memberikan pelatihan berkualitas tinggi dan
+              membantu individu mencapai potensi maksimal mereka dalam dunia
+              teknologi.
+            </p>
+            <p>
+              Didirikan dengan visi untuk menjembatani kesenjangan talenta di
+              industri teknologi, TechTrek telah membantu ribuan individu
+              mengembangkan keterampilan mereka dan memulai karir yang sukses di
+              bidang teknologi.
+            </p>
+          </div>
+
+          <!-- Vision & Mission -->
+          <div class="profile-card">
+            <h3>Vision and Mission</h3>
+            <div class="vision-mission">
+              <div class="vision">
+                <h4>Vision</h4>
+                <p>
+                  Menjadi platform edukasi teknologi terdepan di Indonesia yang
+                  menghasilkan talenta digital berkualitas tinggi dan siap
+                  kerja.
+                </p>
+              </div>
+              <div class="mission">
+                <h4>Mission</h4>
+                <ul>
+                  <li>
+                    Menyediakan program pelatihan teknologi yang praktis dan
+                    relevan dengan kebutuhan industri
+                  </li>
+                  <li>
+                    Membangun ekosistem pembelajaran yang mendukung pengembangan
+                    karir berkelanjutan
+                  </li>
+                  <li>
+                    Menghubungkan talenta terbaik dengan perusahaan teknologi
+                    terkemuka
+                  </li>
+                  <li>
+                    Menciptakan dampak positif dalam transformasi digital
+                    Indonesia
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="img/Data Science.png" alt="Project 1" />
+            <h3>Data Science Bootcamp</h3>
+            <p>
+              Program intensif 12 minggu untuk menjadi Data Scientist
+              profesional
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img src="img/UIUX.png" alt="Project 2" />
+            <h3>UI/UX Design Program</h3>
+            <p>
+              Pelatihan komprehensif desain antarmuka dan pengalaman pengguna
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img src="img/Full Stack.png" alt="Project 3" />
+            <h3>Full Stack Development</h3>
+            <p>Program lengkap pengembangan web dari frontend hingga backend</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="img/Digital Marketing.png" alt="Project 4" />
+            <h3>Digital Marketing</h3>
+            <p>Strategi pemasaran digital untuk meningkatkan brand awareness</p>
+          </div>
+          <div class="portfolio-item">
+            <img src="img/Product Management.png" alt="Project 5" />
+            <h3>Product Management</h3>
+            <p>
+              Pelatihan manajemen produk digital dari konsep hingga peluncuran
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img src="img/Cloud Computing.png" alt="Project 6" />
+            <h3>Cloud Computing</h3>
+            <p>Implementasi dan manajemen infrastruktur cloud modern</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Headquarter Section -->
+    <section class="headquarter-section">
+      <div class="container">
+        <h2 class="section-title">Our Headquarter</h2>
+        <div class="headquarter-grid">
+          <div class="headquarter-item">
+            <div class="circle-image">
+              <img src="img/Jakarta.png" alt="Jakarta" />
+            </div>
+            <h3>Jakarta</h3>
+          </div>
+          <div class="headquarter-item">
+            <div class="circle-image">
+              <img src="img/Bandung.png" alt="Bandung" />
+            </div>
+            <h3>Bandung</h3>
+          </div>
+          <div class="headquarter-item">
+            <div class="circle-image">
+              <img src="img/Surabaya.png" alt="Surabaya" />
+            </div>
+            <h3>Surabaya</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Us Section -->
+    <section id="message-us" class="section message-section">
+      <div class="container">
+        <h2 class="section-title">Message Us</h2>
+        <div class="message-container">
+          <div class="form-container">
+            <form id="messageForm">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+                <span class="error-message" id="nameError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="birthdate">Tanggal Lahir:</label>
+                <input type="date" id="birthdate" name="birthdate" required />
+                <span class="error-message" id="birthdateError"></span>
+              </div>
+
+              <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="Laki-laki"
+                      required
+                    />
+                    Laki-Laki
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="Perempuan"
+                      required
+                    />
+                    Perempuan
+                  </label>
+                </div>
+                <span class="error-message" id="genderError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <span class="error-message" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <div class="output-container">
+            <h3>Current time:</h3>
+            <p id="currentTime">Fri Jun 17 2022 11:27:28 GMT+0100</p>
+
+            <div id="formOutput" class="form-output">
+              <p><strong>Nama:</strong> <span id="outputName">-</span></p>
+              <p>
+                <strong>Tanggal Lahir:</strong>
+                <span id="outputBirthdate">-</span>
+              </p>
+              <p>
+                <strong>Jenis Kelamin:</strong> <span id="outputGender">-</span>
+              </p>
+              <p><strong>Pesan:</strong> <span id="outputMessage">-</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 TechTrek Company. All rights reserved.</p>
+      </div>
+    </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -229,9 +229,6 @@ function handleFormSubmit(e) {
 
     // Show success message
     alert("Message sent successfully!");
-
-    // Optionally, you can reset the form
-    // document.getElementById('messageForm').reset();
   }
 }
 

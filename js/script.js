@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update welcome text
     if (welcomeText) {
-      welcomeText.textContent = `Hi ${userName}, Welcome To TechTrek`;
+      welcomeText.textContent = `Hi ${userName}, Welcome To Website`;
     }
 
     // Auto-fill name in Message Us form
@@ -122,7 +122,17 @@ function updateCurrentTime() {
     const offsetSign = offset >= 0 ? "+" : "-";
     const timezone = `GMT${offsetSign}${offsetHours}${offsetMinutes}`;
 
-    const timeString = `${dayName}, ${monthName} ${date}, ${year}, ${hours}:${minutes}:${seconds} ${timezone}`;
+    // Determine timezone name based on offset
+    let timezoneName = "";
+    if (offsetHours === "07" && offsetMinutes === "00") {
+      timezoneName = " WIB";
+    } else if (offsetHours === "08" && offsetMinutes === "00") {
+      timezoneName = " WITA";
+    } else if (offsetHours === "09" && offsetMinutes === "00") {
+      timezoneName = " WIT";
+    }
+
+    const timeString = `${dayName}, ${monthName} ${date}, ${year}, ${hours}:${minutes}:${seconds} ${timezone}${timezoneName}`;
     currentTimeElement.textContent = timeString;
   }
 }
@@ -149,7 +159,7 @@ function validateBirthdate(birthdate) {
   const selectedDate = new Date(birthdate);
   const today = new Date();
 
-  // Set time to start of day for accurate comparison
+  // Set time to start of day
   today.setHours(0, 0, 0, 0);
   selectedDate.setHours(0, 0, 0, 0);
 
@@ -181,7 +191,7 @@ function validateMessage(message) {
   if (message.trim() === "") {
     return "Message is required";
   }
-  if (message.trim().length < 10) return "";
+  return "";
 }
 
 // Display error message
@@ -200,7 +210,7 @@ function clearErrors() {
   });
 }
 
-// Format date to DD/MM/YYYY
+// Format date
 function formatDate(dateString) {
   const date = new Date(dateString);
   const day = String(date.getDate()).padStart(2, "0");
